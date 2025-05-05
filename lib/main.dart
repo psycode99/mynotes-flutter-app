@@ -41,13 +41,13 @@ class HomePage extends StatelessWidget {
           case ConnectionState.done:
             final user = FirebaseAuth.instance.currentUser;
             // final emailVerified = user?.emailVerified ?? false;
-            // log(' $user');
+            log(' $user');
             if (user != null) {
               if (user.emailVerified) {
                 log('you are a verified user');
                 // return LoginView();
               } else {
-                return VerifyEmailView();
+                // return VerifyEmailView();
               }
             }
             return const NotesView();
@@ -130,3 +130,4 @@ Future<bool> showLogOutDialog(BuildContext context) {
     },
   ).then((value) => value ?? false);
 }
+

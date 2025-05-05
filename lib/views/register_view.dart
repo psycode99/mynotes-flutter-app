@@ -83,7 +83,7 @@ class _RegisterViewState extends State<RegisterView> {
                 context,
               ).pushNamedAndRemoveUntil(loginRoute, (route) => false);
             },
-            child: Text('Already hacve an account? Login'),
+            child: Text('Already have an account? Login'),
           ),
         ],
       ),

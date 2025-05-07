@@ -22,6 +22,7 @@ void main() {
         loginRoute: (context) => LoginView(),
         registerRoute: (context) => RegisterView(),
         notesRoute: (context) => NotesView(),
+        verifyEmailRoute: (context) => VerifyEmailView(),
       },
     ),
   );
@@ -45,12 +46,13 @@ class HomePage extends StatelessWidget {
             if (user != null) {
               if (user.emailVerified) {
                 log('you are a verified user');
-                // return LoginView();
+                return const NotesView();
               } else {
-                // return VerifyEmailView();
+                return VerifyEmailView();
               }
+            } else {
+              return const LoginView();
             }
-            return const NotesView();
 
           default:
             return const CircularProgressIndicator();
@@ -130,4 +132,3 @@ Future<bool> showLogOutDialog(BuildContext context) {
     },
   ).then((value) => value ?? false);
 }
-
